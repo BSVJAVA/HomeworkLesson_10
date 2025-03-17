@@ -19,11 +19,10 @@ public class Main {
 
         // Задача №3
         System.out.println("Задача №3");
-        calculateDistance(90);
+        System.out.println(calculateDistance(101));
     }
 
     public static void checkYear(int year) {
-        if (year == 0) return;
         if (year % 4 == 0) {
             System.out.println(year + " год — високосный год");
         } else {
@@ -45,13 +44,13 @@ public class Main {
         }
     }
 
-    public static void calculateDistance(int deliveryDistance) {
+    public static byte calculateDistance(int deliveryDistance) {
         byte days = 0;               // Количество дней доставки
-        if (deliveryDistance > 0 && deliveryDistance <= 20) days = 1;
+        if (deliveryDistance >= 0 && deliveryDistance <= 20) days = 1;
         if (deliveryDistance > 20 && deliveryDistance <= 60) days = 2;
         if (deliveryDistance > 60 && deliveryDistance <= 100) days = 3;
-        if (deliveryDistance > 100) {
-            System.out.println("Доставки нет");
-        } else System.out.println("Потребуется дней: " + days);
+        return days;
+        //if (deliveryDistance > 100) return "Доставки нет";
+        //    else return "Потребуется дней: " + days;
     }
 }
